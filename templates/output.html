@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Result</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container text-center mt-5">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="alert alert-{{ category }} mt-3">{{ message }}</div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        
+        <img src="{{ url_for('static', filename='happy.gif' if unique else 'unhappy.gif') }}" class="img-fluid mt-4">
+        
+        <div class="mt-4">
+            <a href="{{ url_for('index') }}" class="btn btn-secondary">перевірити інше число</a>
+        </div>
+    </div>
+</body>
+</html>

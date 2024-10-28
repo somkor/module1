@@ -1,0 +1,15 @@
+body {
+    font-family: andale mono, monospace;
+}
+
+h1 {
+    color: #333;
+}
+
+.card {
+    background-color: #f2aed2;
+}
+
+.alert {
+    font-weight: bold;
+}
